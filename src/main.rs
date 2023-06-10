@@ -33,16 +33,24 @@ fn main() {
         for key in keys {
             match key {
                 Keycode::W => {
-                    player.0 -= 1;
+                    if player.0 > 0{
+                        player.0 -= 1;
+                    }
                 }
                 Keycode::S => {
-                    player.0 += 1;
+                    if player.0 < size.rows-1 {
+                        player.0 += 1;
+                    }
                 }
                 Keycode::A => {
-                    player.1 -= 1;
+                    if player.1 > 0{
+                        player.1 -= 1;
+                    }
                 }
                 Keycode::D => {
-                    player.1 += 1;
+                    if player.1 < size.cols-1 {
+                        player.1 += 1;
+                    }
                 }
                 _ => {}
             }
